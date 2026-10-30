@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROPLAND - Products</title>
+
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="map.css">
+
+    <!-- Leaflet.js CSS (cdnjs) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            🌱 CROPLAND
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="farmer-dashboard.html">Farmer Panel</a>
+
+            <a href="shopkeeper-dashboard.html">Shopkeeper Panel</a>
+
+            <a href="my-orders.html">My Orders</a>
+
+            <a href="registration.html">Account</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- PRODUCTS -->
+
+    <main class="products-page">
+
+        <h1>Available Products</h1>
+
+        <p>
+            Buy directly from farmers through CROPLAND.
+        </p>
+
+        <!-- Backend Status Indicator -->
+        <div class="backend-status offline" style="margin-bottom: 10px;">
+            <span class="backend-status-dot"></span> Checking backend connection...
+        </div>
+
+        <div class="products-toolbar">
+            <div>
+                <span class="products-kicker">For farmers</span>
+                <h2>Add your product</h2>
+                <p>Share your harvest with shopkeepers looking for fresh stock.</p>
+            </div>
+            <a href="#productContainer" class="products-browse-link">Browse listings &darr;</a>
+        </div>
+
+        <div class="product-form listing-product-form">
+            <h2>New product details</h2>
+            <label for="listingProductName">Product Name</label>
+            <input id="listingProductName" type="text" placeholder="Example: Wheat">
+            <label for="listingQuantity">Quantity Available (in Kg)</label>
+            <input id="listingQuantity" type="number" placeholder="Example: 500">
+            <label for="listingPrice">Price per kg (₹)</label>
+            <input id="listingPrice" type="number" placeholder="Example: 28">
+            <label for="listingLocation">Location</label>
+            <input id="listingLocation" type="text" placeholder="Example: Latur, Maharashtra">
+            <label for="listingQuality">Quality Grade</label>
+            <select id="listingQuality" title="Quality Grade">
+                <option>Select quality grade</option>
+                <option>A Grade</option>
+                <option>B Grade</option>
+                <option>C Grade</option>
+            </select>
+            <label for="listingDescription">Description</label>
+            <textarea id="listingDescription" placeholder="Describe your product..."></textarea>
+            <button type="button" id="addProductBtn">Add Product</button>
+        </div>
+
+
+        <!-- SEARCH + FILTER + MAP TOGGLE -->
+        <div style="margin: 30px auto 15px; max-width: 900px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <input type="text" id="productSearchInput"
+                   placeholder="🔍 Search by crop name, farmer, or location..."
+                   style="flex: 1; min-width: 250px; padding: 13px 18px; border: 1px solid #d5bea0; border-radius: 8px; font-size: 14px; background: white;">
+            <select id="qualityFilterSelect"
+                    style="padding: 13px 18px; border: 1px solid #d5bea0; border-radius: 8px; font-size: 14px; background: white; color: #4b2e17; font-weight: bold;">
+                <option value="">All Quality Grades</option>
+                <option value="A Grade">A Grade</option>
+                <option value="B Grade">B Grade</option>
+                <option value="C Grade">C Grade</option>
+            </select>
+            <button class="map-toggle-btn map-open" id="mapToggleBtn" type="button" onclick="toggleListingMap()">
+                🗺 Collapse Map
+            </button>
+        </div>
+
+        <!-- MAP SECTION (Visible by default) -->
+        <div id="cropland-map-section">
+            <h2>🗺 Live Harvest Map Across India</h2>
+            <p>Explore crops listed by local farmers. Click any crop pin to view stock, pricing, and place direct orders.</p>
+            <div id="cropLandMap"></div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div id="productContainer">
+
+            <!-- Products populated by script.js -->
+
+        </div>
+
+    </main>
+
+
+    <!-- Leaflet.js (cdnjs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="map.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

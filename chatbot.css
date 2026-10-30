@@ -1,0 +1,58 @@
+.crop-chat-launcher {
+    align-items: center;
+    background: #28543f;
+    border: 0;
+    border-radius: 50%;
+    bottom: 24px;
+    box-shadow: 0 10px 24px rgba(32, 53, 43, .25);
+    color: #fffdf8;
+    cursor: pointer;
+    display: flex;
+    font-size: 24px;
+    height: 58px;
+    justify-content: center;
+    position: fixed;
+    right: 24px;
+    width: 58px;
+    z-index: 1000;
+}
+
+.crop-chat-launcher:hover { background: #c96b45; }
+.crop-chat-launcher:focus-visible { outline: 3px solid #e6bf74; outline-offset: 3px; }
+
+.crop-chat-panel {
+    background: #fffdf8;
+    border: 1px solid #d8d8c9;
+    border-radius: 12px;
+    bottom: 94px;
+    box-shadow: 0 18px 45px rgba(32, 53, 43, .2);
+    display: none;
+    flex-direction: column;
+    height: min(530px, calc(100vh - 125px));
+    overflow: hidden;
+    position: fixed;
+    right: 24px;
+    width: min(360px, calc(100vw - 32px));
+    z-index: 1000;
+}
+
+.crop-chat-panel.is-open { display: flex; }
+.crop-chat-header { align-items: center; background: #28543f; color: #fffdf8; display: flex; justify-content: space-between; padding: 16px 18px; }
+.crop-chat-header strong { display: block; font-family: Georgia, serif; font-size: 18px; font-weight: normal; }
+.crop-chat-header small { color: #dce5d4; font-size: 11px; }
+.crop-chat-close { background: transparent; border: 0; color: #fffdf8; cursor: pointer; font-size: 22px; line-height: 1; }
+.crop-chat-messages { display: flex; flex: 1; flex-direction: column; gap: 10px; overflow-y: auto; padding: 16px; }
+.crop-chat-message { border-radius: 10px; font-size: 13px; line-height: 1.45; max-width: 88%; padding: 10px 12px; white-space: pre-line; }
+.crop-chat-message.assistant { align-self: flex-start; background: #f0eadc; color: #20352b; }
+.crop-chat-message.user { align-self: flex-end; background: #28543f; color: #fff; }
+.crop-chat-suggestions { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 16px 10px; }
+.crop-chat-suggestion { background: #fff; border: 1px solid #c96b45; border-radius: 20px; color: #28543f; cursor: pointer; font-size: 11px; padding: 7px 10px; }
+.crop-chat-form { border-top: 1px solid #d8d8c9; display: flex; gap: 8px; padding: 12px; }
+.crop-chat-input { border: 1px solid #c8c9bc; border-radius: 6px; color: #20352b; flex: 1; font: inherit; min-width: 0; padding: 10px; }
+.crop-chat-send { background: #c96b45; border: 0; border-radius: 6px; color: #fff; cursor: pointer; font-weight: bold; padding: 0 14px; }
+.crop-chat-input:focus { border-color: #28543f; outline: 2px solid rgba(40, 84, 63, .16); }
+
+@media (max-width: 600px) {
+    .crop-chat-launcher { bottom: 16px; right: 16px; }
+    .crop-chat-panel { bottom: 86px; right: 16px; }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CROP LAND - Shopkeeper Registration</title>
+
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="chatbot.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🌾 CROP LAND
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="registration.html">Back</a>
+        </nav>
+
+    </header>
+
+
+    <main class="registration">
+
+        <h1>Shopkeeper Registration</h1>
+
+        <p>Create your CropLand shopkeeper account</p>
+
+
+        <form class="registration-form" id="shopkeeperRegistrationForm">
+
+            <label>Shop Name</label>
+
+                 <input id="shopName"
+                     type="text"
+                   placeholder="Enter shop name"
+                   required>
+
+
+            <label>Owner Name</label>
+
+            <input type="text"
+                   placeholder="Enter owner name"
+                   required>
+
+
+            <label>Mobile Number</label>
+
+            <input type="tel"
+                   placeholder="Enter mobile number"
+                   required>
+
+
+            <label>Email</label>
+
+                     <input id="shopEmail"
+                         type="email"
+                         placeholder="Enter email address"
+                         required>
+
+
+            <label>Shop Location</label>
+
+            <input type="text"
+                   placeholder="City, District, State"
+                   required>
+
+
+            <label>Business Type</label>
+
+            <input type="text"
+                   placeholder="Example: Grocery Store">
+
+
+            <label>Password</label>
+
+                 <input id="shopPassword"
+                     type="password"
+                   placeholder="Create a password"
+                   required>
+
+
+            <button type="submit">
+                Create Shopkeeper Account
+            </button>
+
+        </form>
+
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="script.js"></script>
+<script src="map.js"></script>
+<script src="chatbot.js"></script>
+</body>
+
+</html>

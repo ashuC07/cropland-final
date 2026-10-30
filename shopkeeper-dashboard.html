@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CROPLAND - Shopkeeper Dashboard</title>
+
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🌾 CROPLAND
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="product-listing.html">
+                Products
+            </a>
+
+            <a href="my-orders.html">
+                My Orders
+            </a>
+
+            <a href="javascript:logout()">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <h1 id="shopkeeperWelcome">Welcome, Shopkeeper! 🏪</h1>
+
+        <p>
+            Browse products directly from farmers and manage your orders.
+        </p>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h2>🌾 Browse Products</h2>
+
+                <p>
+                    View fresh harvest added directly by farmers.
+                </p>
+
+                <a href="product-listing.html">
+                    Explore Marketplace
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>📦 My Orders</h2>
+
+                <p id="shopkeeperOrderStats">
+                    Loading your order history...
+                </p>
+
+                <a href="my-orders.html">
+                    Track All Orders
+                </a>
+
+            </div>
+
+        </div>
+
+        <section style="margin-top: 45px;">
+            <h2>Recent Orders</h2>
+            <div id="shopkeeperRecentOrders" style="margin-top: 15px; display: flex; flex-direction: column; gap: 15px;">
+                <!-- Recent orders filled by JS -->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Leaflet.js (cdnjs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

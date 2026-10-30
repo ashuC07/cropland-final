@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CROP LAND- Farmer Dashboard</title>
+
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            🌾 CROP LAND
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="product-listing.html">Marketplace</a>
+            <a href="#incoming-orders">Incoming Orders</a>
+            <a href="#my-products-section">My Products</a>
+            <a href="javascript:logout()">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h2>Farmer Panel</h2>
+
+            <a href="farmer-dashboard.html" class="active">Dashboard</a>
+
+            <a href="#incoming-orders">Incoming Orders</a>
+
+            <a href="#my-products-section">My Listed Produce</a>
+
+            <a href="#add-product">Add Product</a>
+
+            <a href="product-listing.html">Public Marketplace</a>
+
+            <a href="javascript:logout()">Logout</a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <section class="dashboard-content">
+
+            <h1>Farmer Dashboard</h1>
+
+            <p>
+                Add your agricultural products and connect directly
+                with shopkeepers.
+            </p>
+
+            <div class="dashboard-actions">
+                <a href="#add-product" class="dashboard-action-primary">+ Add New Product</a>
+                <a href="product-listing.html" class="dashboard-action-secondary">View Product Listings &rarr;</a>
+            </div>
+
+            <section class="product-summary">
+                <div>
+                    <span class="summary-label">Marketplace</span>
+                    <h2>Your product workspace</h2>
+                    <p>List your harvest with its quantity, price, quality, and location.</p>
+                </div>
+                <strong id="farmerProductCount">0 products listed</strong>
+            </section>
+
+
+            <!-- ADD PRODUCT CARD -->
+           
+
+            <section class="incoming-orders" id="incoming-orders">
+
+    <h2>Incoming Order Requests</h2>
+
+    <div id="orderRequestContainer">
+
+        <p>No new order requests.</p>
+
+    </div>
+
+</section>
+
+            <section class="incoming-orders" id="my-products-section" style="background: #fffdf8; border: 1px solid #dfc9aa;">
+
+                <h2>Your Listed Harvest</h2>
+                <p style="color: #66503c; margin-bottom: 15px;">Manage stock and active produce available for shopkeepers.</p>
+
+                <div id="farmerProductListContainer" style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+                    <!-- Product cards populated by script.js -->
+
+                </div>
+
+            </section>
+            <div class="product-form" id="add-product">
+
+                <h2>Add New Product</h2>
+
+
+                <label>Product Name</label>
+
+                <input type="text"
+                       placeholder="Example: Wheat">
+
+
+                <label>Quantity Available(in Kg)</label>
+
+                <input type="number"
+                       placeholder="Example: 500">
+
+
+                <label>Price per kg (₹)</label>
+
+                <input type="number"
+                       placeholder="Example: 28">
+
+
+                <label>Location</label>
+
+                <input type="text"
+                       placeholder="Example: Latur, Maharashtra">
+
+
+                <label>Quality Grade</label>
+
+                <select title="Quality Grade">
+
+                    <option>Select quality grade</option>
+
+                    <option>A Grade</option>
+
+                    <option>B Grade</option>
+
+                    <option>C Grade</option>
+
+                </select>
+
+
+                <label>Description</label>
+
+                <textarea
+                    placeholder="Describe your product..."></textarea>
+
+
+                <label>Upload Product Image</label>
+
+                  <input type="file"
+                      title="Upload Product Image"
+                       accept="image/*">
+
+
+                <button type="button" id="addProductBtn">
+    Add Product
+</button>
+                    
+                
+
+            </div>
+
+        </section>
+
+    </main>
+    
+
+    <!-- Leaflet.js (cdnjs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+    <script src="chatbot.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm2Land</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="map.css">
+
+    <!-- Leaflet.js CSS (cdnjs - clean, fast, no SRI blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="logo" href="index.html" aria-label="Crop Land home">🌾 CROP LAND</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#marketplace-map">Harvest Map</a>
+            <a href="#about">About Us</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact</a>
+            <a href="registration.html" class="login-btn">Login / Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">A better route for every harvest</p>
+                <h1 id="hero-title">Good food starts with a fair connection.</h1>
+                <p class="hero-copy">Crop Land brings farmers and shopkeepers together, making every exchange more direct, visible, and rewarding.</p>
+                <div class="hero-buttons">
+                    <a href="product-listing.html" class="primary-btn">Explore Products <span aria-hidden="true">&rarr;</span></a>
+                    <a href="registration.html" class="secondary-btn">Join the network</a>
+                </div>
+                <div class="hero-note"><span class="status-dot" aria-hidden="true"></span> Direct trade. Local impact.</div>
+            </div>
+            <div class="hero-card">
+                <span class="hero-card-label">This season on Crop Land</span>
+                <strong>Fresh produce,<br>closer to home.</strong>
+                <span>Transparent prices from the people who grow it.</span>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Crop Land community statistics">
+            <div><strong>1000+</strong><span>farmers</span></div>
+            <div><strong>500+</strong><span>shopkeepers</span></div>
+            <div><strong>50+</strong><span>products</span></div>
+            <div><strong>30+</strong><span>locations</span></div>
+        </section>
+
+        <!-- LIVE HARVEST MAP SECTION -->
+        <section class="content-section" id="marketplace-map" aria-labelledby="map-title" style="padding: 40px 6%;">
+            <div class="section-kicker">01 &mdash; Live Harvest Map</div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 22px;">
+                <div>
+                    <h2 id="map-title" style="font-size: 32px; color: #4b2e17; margin-bottom: 6px;">Fresh Produce Across India</h2>
+                    <p style="color: #66503c; font-size: 15px; max-width: 650px;">Explore live harvest locations directly from registered farmers. Click on any crop pill to check quantities, prices, and place direct orders.</p>
+                </div>
+                <a href="product-listing.html" class="primary-btn" style="text-decoration: none; padding: 12px 22px; font-size: 14px; white-space: nowrap;">Browse All Products &rarr;</a>
+            </div>
+            <div id="homeLandMap"></div>
+        </section>
+
+        <section class="about-section content-section" id="about" aria-labelledby="about-title">
+            <div class="section-kicker">01 &mdash; Our purpose</div>
+            <div class="about-grid">
+                <div><h2 id="about-title">A simpler path from the field to the shelf.</h2></div>
+                <div class="section-copy">
+                    <p>Crop Land is a direct marketplace for the people at the heart of local food systems. Farmers get a clearer route to market, while shopkeepers can discover quality produce without unnecessary layers in between.</p>
+                    <a href="registration.html" class="text-link">Become part of the network <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+            <div class="value-grid">
+                <article class="value-card"><span class="value-number">01</span><h3>Fairer value</h3><p>Better visibility helps farmers make informed offers and keep more of what they earn.</p></article>
+                <article class="value-card"><span class="value-number">02</span><h3>Local trust</h3><p>Connect with the growers and buyers who keep your own community moving.</p></article>
+                <article class="value-card"><span class="value-number">03</span><h3>Clear choices</h3><p>Browse product details, quality, quantity, location, and price in one place.</p></article>
+            </div>
+        </section>
+
+        <section class="process-section content-section" id="how-it-works" aria-labelledby="process-title">
+            <div class="section-kicker">02 &mdash; How it works</div>
+            <div class="process-heading">
+                <h2 id="process-title">From listing to loading<br>in three clear steps.</h2>
+                <p>Everything you need to make a confident connection is right here.</p>
+            </div>
+            <div class="steps-grid">
+                <article class="step-card"><span class="step-icon">01</span><h3>List your harvest</h3><p>Farmers add a product with its quantity, quality, price, and location.</p></article>
+                <article class="step-card featured-step"><span class="step-icon">02</span><h3>Find the right fit</h3><p>Shopkeepers browse available produce and open the details that matter.</p></article>
+                <article class="step-card"><span class="step-icon">03</span><h3>Start the order</h3><p>Send a request directly and build a dependable supply relationship.</p></article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-intro">
+                <div class="section-kicker">03 &mdash; Contact</div>
+                <h2 id="contact-title">Let&rsquo;s grow a better marketplace.</h2>
+                <p>Have a question about joining, listing products, or finding suppliers? Our team would love to hear from you.</p>
+                <div class="contact-detail"><span>Write to us</span><a href="mailto:hello@cropland.example">hello@cropland.example</a></div>
+                <div class="contact-detail"><span>Call the team</span><a href="tel:+910000000000">+91 00000 00000</a></div>
+            </div>
+            <form class="contact-form" action="mailto:hello@cropland.example" method="post" enctype="text/plain">
+                <label for="contact-name">Your name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Enter your name" required>
+                <label for="contact-email">Email address</label>
+                <input id="contact-email" name="email" type="email" placeholder="you@example.com" required>
+                <label for="contact-message">How can we help?</label>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Tell us a little more" required></textarea>
+                <button type="submit" class="primary-btn">Send message <span aria-hidden="true">&rarr;</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="logo" href="index.html">🌾 CROP LAND</a>
+        <p>Direct connections. Stronger communities.</p>
+        <span>&copy; 2026 Crop Land</span>
+    </footer>
+    <!-- Leaflet.js (cdnjs - fast, reliable, no blocking) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="map.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
